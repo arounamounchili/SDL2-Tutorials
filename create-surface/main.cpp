@@ -44,7 +44,7 @@ int main()
     }
 
     SDL_Surface *image;
-    image = SDL_LoadBMP("create-surface/panda.bmp"); // loads image
+    image = SDL_LoadBMP("create-surface/image.bmp"); // loads image
     if (image == NULL)
     {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Could not load a BMP image %s\n", SDL_GetError());
