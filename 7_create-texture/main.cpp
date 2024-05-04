@@ -36,7 +36,7 @@ int main()
     }
 
     // Load a surface from a file
-    SDL_Surface *surface = SDL_LoadBMP("create-texture/image.bmp");
+    SDL_Surface *surface = SDL_LoadBMP("7_create-texture/image.bmp");
     // Create a texture from an existing surface.
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
@@ -66,20 +66,20 @@ int main()
                 }
                 break;
             }
-            // Select a color for drawing. It is set to black color
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-            // Clear the entire screen to our selected color.
-            SDL_RenderClear(renderer);
-
-            // Select a white color
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
-            // Copy a portion of the texture to the current rendering target
-            SDL_RenderCopy(renderer, texture, NULL, &rectangle);
-
-            // Up until now everything was drawn behind the scenes.
-            // This will show the new contents of the window
-            SDL_RenderPresent(renderer);
         }
+        // Select a color for drawing. It is set to black color
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+        // Clear the entire screen to our selected color.
+        SDL_RenderClear(renderer);
+
+        // Select a white color
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+        // Copy a portion of the texture to the current rendering target
+        SDL_RenderCopy(renderer, texture, NULL, &rectangle);
+
+        // Up until now everything was drawn behind the scenes.
+        // This will show the new contents of the window
+        SDL_RenderPresent(renderer);
     }
 
     SDL_DestroyTexture(texture);
